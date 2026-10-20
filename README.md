@@ -102,10 +102,7 @@ npm start                                  # http://localhost:3000
 - On the free tier the backend sleeps when idle, and the first request can take **60 to 90 seconds**. To wake it before a demo, open [the customers endpoint](https://retainiq-thunderhacks-2026.onrender.com/api/customers).
 
 ---
-
 <div align="center">
-
-## Team
 
 **Ellison Naz** · **Rishav Bawa** · **Joel Saji Varghese**
 
