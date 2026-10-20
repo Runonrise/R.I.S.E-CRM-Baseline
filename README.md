@@ -1,16 +1,15 @@
 <div align="center">
 
-<img src="assets/RetainIQ_Banner.png" alt="RetainIQ" width="750">
+<img src="assets/RISE-CRM-lockup-transparent-for-dark.png" alt="R.I.S.E CRM" width="380">
 
-<p align="center">
-  <a href="https://retainiq-thunderhacks-2026.vercel.app/"><strong>Live Demo</strong></a>
-  &nbsp;·&nbsp;
-  <a href="https://github.com"><strong>Source Code</strong></a>
-</p>
+<br><br>
 
+**Retention Intelligence on Sales Engagement.**
+Spot churn before it happens, and know exactly who to call today.
 
+[**Live Demo**](https://retainiq-thunderhacks-2026.vercel.app/) &nbsp;·&nbsp; [**User Guide**](USER_GUIDE.md) &nbsp;·&nbsp; [**Developer Guide**](DEVELOPER_GUIDE.md)
 
-&nbsp;**Gold Sponsor Challenge Winner (ThunderHacks 2026)**
+🏆 Gold Sponsor Challenge Winner, ThunderHacks 2026
 
 </div>
 
@@ -18,116 +17,98 @@
 
 ## Overview
 
-RetainIQ is a customer retention intelligence platform built for **Digital Move IT & Telecom** in just 24 hours at ThunderHacks 2026.
+R.I.S.E CRM (formerly RetainIQ) is a customer retention platform built for **Digital Move IT & Telecom** in 24 hours at ThunderHacks 2026.
 
-By analyzing your entire customer base in real time, RetainIQ automatically scores churn risk, maps customer journeys, and drafts personalized outreach copy with AI. It transforms your retention workflow so your sales team stops reacting to churn and starts preventing it.
+It scores churn risk for every account in real time, maps each customer's journey, and drafts personalized retention emails with AI, so sales teams stop reacting to churn and start preventing it.
 
 <div align="center">
-
-<img src="./assets/thunderhacks-win.jpg" width="720" alt="ThunderHacks Win" />
-
-<sub>Winning the Digital Move Gold Sponsor Challenge at ThunderHacks 2026</sub>
-
+  <img src="assets/thunderhacks-win.jpg" width="640" alt="Winning the Digital Move Gold Sponsor Challenge at ThunderHacks 2026">
+  <br>
+  <sub>Winning the Digital Move Gold Sponsor Challenge at ThunderHacks 2026</sub>
 </div>
 
 ---
 
-## ⎔ Feature Architecture
+## Features
 
-* **System Dashboard:** Displays live churn risk scores across every account with quick filters for plan tier and risk level. Includes animated KPI cards and a responsive, color-coded bar chart that updates instantly as you filter data.
-* **Customer Intelligence Center:** A sortable, searchable data table equipped with mini sparkline trends, risk bars, and plan badges. Clicking any row expands an inline detail panel containing six deep-dive stats, a risk gauge, and a visual journey stage indicator.
-* **Pipeline Journey Map:** Outlines customer status across a four-stage pipeline: *Active, At-Risk, Critical, and Expired*. Teams can click any stage to inspect the exact cohort profile, individual risk scores, and the overall health rating of that segment.
-* **Lifecycle Timeline:** A carousel interface holding every customer profile in the dataset. Selecting a user lets you scroll through a three-act narrative tracking their engagement decline, backed by a sticky profile card that morphs seamlessly between Active, Warning, and Critical states using Framer Motion.
-* **Automated Alert Center:** Highlights the high-priority accounts needing a phone call today. Features a terminal-style panel that drafts personalized retention emails on demand, generated live by Groq's Llama 3.3 70B model.
+| | |
+| :--- | :--- |
+| **Dashboard** | Live churn risk across every account, with filters for plan tier and risk level, animated KPI cards and a color-coded chart. |
+| **Customer Intelligence** | A sortable, searchable table with sparkline trends, risk bars and plan badges. Click a row for six deep-dive stats, a risk gauge and a journey-stage indicator. |
+| **Pipeline Journey Map** | Four stages (Active, At-Risk, Critical, Expired). Click a stage to inspect its cohort, individual risk scores and overall health. |
+| **Lifecycle Timeline** | Pick any customer and scroll through a three-act story of their engagement decline. |
+| **Alert Center** | The high-priority accounts that need a call today, plus on-demand retention emails written by Groq's Llama 3.3 70B. |
 
 ---
 
-## λ Predictive Logic & Data Flow
+## How It Works
 
 ```text
-[Customer Data] ──> [scikit-learn Scoring] ──> [Real-Time Risk Score] ──> [Groq · Llama 3.3 70B] ──> [Personalized Email]
+Customer data → scikit-learn scoring → 0–100 risk score → Groq (Llama 3.3 70B) → personalized email
 ```
 
-1. **Predictive Modeling:** The scoring layer evaluates customer signals — contract value, time since last contact, and days until renewal — to produce a 0–100 churn risk score and a lifecycle stage for every account in real time.
-2. **AI Copy Generation:** Renewal emails are drafted on demand by Groq's **Llama 3.3 70B** model, personalized per account using the company name, software, contract expiry, value, and account manager. If the AI service is unavailable, the engine falls back to a deterministic local template so a usable draft is always produced.
+1. **Scoring:** contract value, time since last contact and days until renewal produce a 0–100 churn risk score and a lifecycle stage for every account.
+2. **Outreach:** renewal emails are drafted per account using company name, software, contract expiry, value and account manager. If the AI service is down, a local template takes over, so there is always a usable draft.
 
 ---
 
-## ⧉ Tech Stack
-
-<div align="left">
+## Tech Stack
 
 | Layer | Technologies |
 | :--- | :--- |
-| **Frontend UI** | `React` • `Framer Motion` • `Recharts` |
-| **Backend API** | `Python` • `Flask` • `Flask-CORS` |
-| **Data & ML** | `scikit-learn` • `Pandas` • `NumPy` |
-| **Database** | `SQLite` |
-| **AI Generation** | `Groq` • `Llama 3.3 70B` |
-| **Design** | `Space Mono` • `DM Sans` |
-| **Deployment** | `Vercel` (Frontend) • `Render` (Backend) |
-
-</div>
+| Frontend | React, Framer Motion, Recharts |
+| Backend | Python, Flask, Flask-CORS |
+| Data & ML | scikit-learn, Pandas, NumPy |
+| Database | SQLite |
+| AI | Groq, Llama 3.3 70B |
+| Hosting | Vercel (frontend), Render (backend) |
 
 ---
 
-## Sponsor Pillars: Digital Move
+## Getting Started
 
-Our implementation matches the core priorities outlined for the Digital Move challenge:
+**Prerequisites:** Python 3.10+, Node.js 18+
 
-* **Predictive churn scoring:** A churn-scoring model evaluates contract and engagement signals to provide an accurate 0–100 risk metric per account.
-* **Automated outreach drafts:** Generated live by Groq's Llama 3.3 70B model for genuine, context-aware personalization, with a deterministic local template fallback for guaranteed uptime.
-* **Customer journey mapping:** Delivered as a visual four-stage pipeline featuring fully expandable cohort analytics.
-* **Real-time alerts dashboard:** Integrated as a dedicated Alert Center complete with instant risk meters and on-demand email generation.
+### 1. Backend
 
----
-
-## $ Running Locally
-
-### Backend Setup
 ```bash
-cd retainiq-thunderhacks-2026
+git clone https://github.com/Runonrise/R.I.S.E-CRM.git
+cd R.I.S.E-CRM
 pip install -r requirements.txt
 
-# AI email generation needs a Groq API key:
-export GROQ_API_KEY=your_key_here    # Windows (PowerShell): $env:GROQ_API_KEY="your_key_here"
+# For AI emails, set a Groq API key
+export GROQ_API_KEY=your_key_here          # macOS / Linux
+$env:GROQ_API_KEY="your_key_here"          # Windows PowerShell
 
-python app.py
-# → Running on http://localhost:5000
+python app.py                              # http://localhost:5000
 ```
 
-### Frontend Setup
+### 2. Frontend
+
 ```bash
-cd retainiq-thunderhacks-2026/frontend
+cd frontend
 npm install
-npm start
-# → Running on http://localhost:3000
+npm start                                  # http://localhost:3000
 ```
 
-> **Demo Credentials (for evaluation purposes only):**
-> * **Username:** `digitalmove`
-> * **Password:** `retainiq2026`
+> **Demo login (evaluation only):** `digitalmove` / `retainiq2026`
 
 ---
 
-## Deployment Notes
+## Deployment
 
-The frontend lives on **Vercel** and the backend is hosted on **Render**.
-
-The backend uses a lightweight **SQLite** database that is automatically initialized and seeded from `clients.csv` on every startup. This keeps the live demo populated with a consistent dataset even on Render's ephemeral free-tier disk, so there's never an empty dashboard. Because that disk resets whenever the instance sleeps, records added through the live UI are not retained long-term — ideal for a clean, repeatable demo.
-
-Because the backend runs on a free-tier instance, it spins down into a sleep state after a period of inactivity. The initial request can take roughly **60 to 90 seconds** while the container provisions. Subsequent requests execute instantly.
-
-↳ **Pro-Tip:** To pre-warm the backend right before a live presentation, visit: `https://retainiq-thunderhacks-2026.onrender.com/api/customers`
+- **Frontend:** Vercel. **Backend:** Render.
+- The backend seeds a SQLite database from `clients.csv` on every startup, so the demo is never empty. Render's free-tier disk is ephemeral, so records added through the UI do not persist.
+- On the free tier the backend sleeps when idle, and the first request can take **60 to 90 seconds**. To wake it before a demo, open [the customers endpoint](https://retainiq-thunderhacks-2026.onrender.com/api/customers).
 
 ---
 
 <div align="center">
 
-**Ellison Naz** • **Rishav Bawa** • **Joel Saji Varghese**
+## Team
 
-<sub>ThunderHacks 2026 • Algoma University • March 2026</sub>
+**Ellison Naz** · **Rishav Bawa** · **Joel Saji Varghese**
 
-<sub>Built with focus, intensity, and very little sleep.</sub>
+<sub>© 2026 Runonrise · Retention Intelligence on Sales Engagement · Not yet an official release</sub>
 
 </div>
